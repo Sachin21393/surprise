@@ -1,0 +1,21 @@
+[
+  "index.html",
+  "admin.html",
+  "book.css",
+  "admin.css",
+  "reader.js",
+  "admin.js",
+  "core.js",
+  "storage.js",
+  "zip.js",
+  "pwa.js",
+  "sw.js",
+  "manifest.webmanifest",
+  "resources.json",
+  "assets/icon-192.png",
+  "assets/icon-512.png",
+  "assets/sample.svg",
+  "README.md",
+  "content.js",
+  "boot.js"
+]

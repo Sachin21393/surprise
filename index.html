@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#92789f"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><title>Happy Birthday Neemisha</title><link rel="manifest" href="./manifest.webmanifest"><link rel="apple-touch-icon" href="./assets/icon-192.png"><link rel="icon" href="./assets/icon-192.png"><link rel="stylesheet" href="./book.css"></head><body><div id="birthday-drama" aria-label="Birthday notebook with swipe page turns">
+ <header><div class="brand">A LITTLE SEOUL, A LOT OF YOU<strong>Our own little drama.</strong></div><button class="install" id="install">Install</button></header>
+ <section class="rotate"><div class="phone" aria-hidden="true"></div><h2>A story best read sideways.</h2><p>Turn your phone to landscape, then swipe left to open your birthday story.</p><button id="landscape" class="cursor-interaction">Enter landscape ♡</button><p id="rotation-note" role="status"></p></section>
+ <p id="load-error" class="fatal" role="alert" hidden></p><div class="desk"><div class="stage cursor-interaction" tabindex="0" aria-label="Swipe or drag left for the next spread, right to go back, or all the way right to close the book">
+  <div class="book" hidden><div class="seam"></div><div class="cast-shadow"></div></div>
+  <section class="cover" aria-label="Birthday book cover"><span class="fine">THE BIRTHDAY SPECIAL</span><span class="flower" aria-hidden="true">✿</span><h1>You are<br>my favourite<br>story.</h1><span class="fine">Happy Birthday Neemisha</span><button id="open" class="cursor-interaction">Open your story ♡</button></section>
+  <section class="ending" hidden><span class="fine">THE SEASON FINALE</span><h2>To be continued.<br>With you.</h2><p>And a lifetime of stories still to come.</p></section>
+ </div></div>
+ <span class="sr" id="announce" aria-live="polite"></span>
+ <span class="sr" id="voice-status" role="status"></span>
+</div>
+<dialog class="install-help" id="install-help"><h2>Keep your story close.</h2><p id="install-instructions">On iPhone: open this link in Safari, tap Share, then Add to Home Screen. On Android: use your browser’s Install app or Add to Home screen option.</p><p>Turn your phone sideways to read. Allow the book to finish loading online before opening it offline.</p><button id="dismiss-install">Got it ♡</button></dialog><script type="module" src="./boot.js" data-app="reader"></script><!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body></html>
